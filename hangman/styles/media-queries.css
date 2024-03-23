@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@media screen and (min-width:768px) {
+    .content_all{
+        width:80%;
+        max-width: 900px;
+        min-height: 500px;
+        max-height: 600px;
+
+        overflow: hidden;
+        border-radius: 10px;
+        border:solid 5px black;
+
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .content_all > .content_items{
+        display:grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: none;
+        border-bottom:solid 3px black;
+    }
+
+    .content_forca > .forca{
+        width:300px;
+    }
+
+    .content_items > .theme_e_discover_word{
+        max-height: 100%;
+    }
+
+    .theme_e_discover_word > .theme{
+        padding-inline:20px;
+        font-size: 1.8em;
+    }
+
+    .theme_e_discover_word > .discover_word{
+        padding-inline:10px;
+        font-size: 2em;
+    }
+
+    .content_keyboard > .keyboard{
+        width:80%;
+        height: 90%;
+    }
+
+    .keyboard > .btn-keyboard{
+        width: 10%;
+        height: 30%;
+    }
+}

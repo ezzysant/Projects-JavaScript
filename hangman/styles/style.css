@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Balance Life';
+    src: url(../fonts/BalanceLife.otf) format('opentype');
+}
+
+:root{
+    --font_00: Arial, Helvetica, sans-serif;
+    --font_01: 'Balance Life', Arial, Helvetica, sans-serif;
+    --corFundo01 : #fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+
+body{
+    width:100vw;
+    height:100vh;
+
+    font-family: var(--font_00);
+    
+
+    position:relative;
+
+    background: #fff url("../images/background/folha-papel.jpg") repeat top left;
+    background-size: contain;
+}
+
+.content_all{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.6) ;
+}
+
+.content_all > .content_items{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content_items > .content_forca{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height: 100%;
+}
+
+.content_forca > .forca{
+    display:block;
+    width:50%;
+    max-width: 180px;
+
+}
+
+.content_items > .theme_e_discover_word{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    width:100%;
+    max-height:150px;
+
+    font-family: var(--font_01);
+}
+
+.theme_e_discover_word > .theme,
+.keyboard > .btn-keyboard,
+.theme_e_discover_word > .discover_word{
+    font-size: 1.6em;
+
+    border:solid 3px black;
+    padding:5px;
+    border-radius:10px;
+
+    background-color:var(--corFundo01);
+
+    text-align: center;
+
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.theme_e_discover_word > .theme{
+    font-size: 1.3em;
+}
+
+.theme_e_discover_word > .discover_word{
+    font-size: 1.8em;
+}
+
+.content_all > .content_keyboard{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height:100%;
+    max-height: 500px;
+
+    padding:10px;
+
+}
+
+.content_keyboard > .keyboard{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    gap:5px;
+
+    max-width: 100%;
+    height: 100%;
+    margin:auto;
+}
+
+.keyboard > .btn-keyboard{
+    cursor: pointer;
+    width: 15%;
+    
+    font-family: var(--font_01);
+    font-size:1.5em;
+}
+
+.keyboard > .btn-keyboard:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.keyboard > .btn-keyboard:active{
+    background-color: rgb(150, 150, 150);
+}
+
+.content_aviso{
+    display:none;
+
+    width:70%;
+    max-width: 300px;
+    height: 150px;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    padding:10px;
+    border:solid 3px black;
+    border-radius: 10px;
+
+    background-color:var(--corFundo01);
+
+}
+
+.content_aviso > .aviso{
+    display:flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+
+    gap:5px;
+
+    position:relative;
+    width:100%;
+    height: 100%;
+}
+
+.aviso > .aviso_txt{
+    text-align:center;
+    font-size: 1.5em;
+}
+
+.aviso > .content_reveal_word{
+    text-align:center;
+    font-size: 1em;
+
+    background-color:rgb(200, 200, 200);
+    padding:3px;
+    border:solid 2px black;
+    border-radius:5px;
+}
+
+.aviso > .btn_aviso{
+    display: block;
+
+    background-color:#fff;
+    border:solid 1px black;
+    padding:3px;
+    border-radius: 5px;
+}
+
+footer{
+    padding:2px;
+}
+
+footer > .creditos{
+    text-align: right;
+    margin-right: 5px;
+    font-size: .9em;
+}
+
+.creditos > a{
+    text-decoration: none;
+    color: rgb(94, 94, 94);
+    font-style: italic;
+    font-weight: 900;
+    padding:2px;
+}
+.creditos > a:hover{
+    text-decoration: underline;
+    color: rgb(49, 49, 49);
+    background-color: rgb(201, 201, 201);
+    border-radius: 3px;
+}
+.creditos > a:active{
+    text-decoration: underline;
+    color: #000;
+    background-color: rgb(201, 201, 201);
+    border-radius: 3px;
+}

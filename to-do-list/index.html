@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <section id="content-all">
+        <div id="content-list">
+            <h1 id="title-list" onclick="changeNameList(this)">Lista</h1>
+            <input type="text" onblur="saveNameList(this)" value="Lista" style="display: none">
+        </div>
+        <ul id="list-items"></ul>
+    </section>
+
+    <div id="content-add">
+        <a href="">
+            <button id="add-itens" onclick="addItem(this)">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+        </a>
+
+        <footer>
+            <div id="creditos">Site criado por <a href="https://github.com/ezequiielsantos" target="_black" rel="external">Ezequiel Santos</a>
+            </div>
+        </footer>
+    </div>
+
+    
+
+    <script src="script/script.js"></script>
+</body>
+</html>

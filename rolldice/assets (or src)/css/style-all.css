@@ -1,0 +1,167 @@
+@charset "UFT-8";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:#000 linear-gradient(180deg,#151515,#000);
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+
+    padding:2px;
+    background-color:#000;
+
+    z-index: 1;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .conteiner-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap:min(2vw,8px);
+
+    /* background: #f00; */
+}
+
+.conteiner-logo .logo{
+    width:clamp(40px,10vw,60px);
+}
+
+.conteiner-logo #name-site{
+    color:#fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:clamp(25px,6vw,35px);
+}
+
+main{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+
+    display:flex;
+    align-items: center;
+}
+
+main > .conteiner-roll-dice{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height:100%;
+}
+
+
+.conteiner-roll-dice > .conteiner-dice{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:100%;
+
+    background:#f00 radial-gradient(#ff0000,#5f0000);
+
+    perspective:800px;
+
+    overflow: hidden;
+}
+
+.conteiner-roll-dice > .items-dice{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height:100%;
+}
+
+.items-dice > button{
+    display:block;
+
+    cursor: pointer;
+
+    border:none;
+    width: min(60%,300px);
+    height:60px;
+
+    border-radius: 20px;
+
+    box-shadow: inset 5px 5px 10px #fcd573;
+
+    background:#daa520 radial-gradient(#fad579 20%,#daa520 ,#977317,#49380b);
+    color:#000;
+
+    font-size: 1.2em;
+    font-weight: 700;
+
+    transition:transform .2s;
+}
+
+.items-dice > button:hover{
+    transform:scale(1.1, 1.1);
+}
+
+.items-dice > button:active{
+    transform:scale(.9, .9);
+}
+
+.items-dice > .result{
+    display:block;
+
+    color:#fff;
+
+    font-size: 1.2em;
+
+    margin-top:10px;
+}
+
+footer{
+    width:100%;
+    padding:5px;
+    background-color:#000;
+}
+
+footer > .creditos{
+    text-align: center;
+    color:#fff;
+}
+
+.creditos > a{
+    color:#fff;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 700;
+    padding:3px;
+    border-radius: 5px;
+}
+
+.creditos > a:hover{
+    text-decoration: underline;
+    background-color:rgb(20, 20, 20);
+}
+
+.creditos > a:active{
+    text-decoration: underline;
+    background-color:rgb(30, 30, 30);
+}

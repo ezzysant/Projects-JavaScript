@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body onload="start()">
+    <main>
+        <section class="conteiner-tictactoe">
+            <h1><a href="#">Jogo da Velha</a></h1>
+            <div class="conteiner-items">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+        </section>
+
+        <div class="conteiner-aviso">
+            <div id="msg">Player 1 ganhou!</div>
+            <button id="btn-aviso" onclick="start()">Reset</button>
+        </div>
+    </main>
+
+    <footer>
+        <div id="creditos">Site feito por <a href="https://github.com/ezequiielsantos" target="_blank" rel="external">Ezequiel Santos</a></div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

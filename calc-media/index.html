@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <section id="content">
+        <h1>Calculador de Média</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nota 01</th>
+                    <th scope="col">Nota 02</th>
+                    <th scope="col">Nota 03</th>
+                    <th scope="col">Nota 04</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="nota01" id="inota01" value="0"></td>
+                    <td><input type="number" name="nota02" id="inota02" value="0"></td>
+                    <td><input type="number" name="nota03" id="inota03" value="0"></td>
+                    <td><input type="number" name="nota04" id="inota04" value="0"></td>
+                </tr>
+                <tr>
+                    <td id="imediatotal" colspan="3">Média total: <span id="iresult">0</span></td>
+                    <td><button onclick="calcMedia()">Calcular</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <div id="creditos">Site feito por <a href="https://github.com/ezequiielsantos" target="_black" rel="external">Ezequiel Santos</a></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

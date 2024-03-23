@@ -1,0 +1,5 @@
+@media screen and (max-height:300px) {
+    .conteiner-roll-dice > .conteiner-dice{
+        display: none;
+    }
+}

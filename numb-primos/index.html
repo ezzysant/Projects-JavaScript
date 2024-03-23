@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Número Primo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css-creditos/style.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="content">
+        <h1>Verificador de Números Primos</h1>
+        <label for="inum">Digíte Números Naturais Separados por vírgula: </label>
+        <div id="content-items">
+            <div id="content-input">
+                <div class="items-input">
+                    <input type="text" name="num" id="inum" value="0" oninput="avisoErro(this.value)">
+                    <button onclick="resNumPrimo()">Verificar</button>
+                </div>
+                <div id="iaviso"></div>
+            </div>
+            <div id="ires"></div>
+        </div>
+    
+    </div>
+
+    <footer>
+        <div id="creditos">Site feito por <a href="https://github.com/ezequiielsantos" target="_black" rel="external">Ezequiel Santos</a></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

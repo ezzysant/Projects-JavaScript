@@ -1,0 +1,25 @@
+@media screen and (min-width: 768px){
+    body{
+        align-items: center;
+        background:#000 radial-gradient(#1d1d1d,#000);
+    }
+
+    header{
+        justify-content: flex-start;
+        padding-inline:50px;
+    }
+
+    main{
+        justify-content: center;
+    }
+
+    main > .conteiner-roll-dice{
+        width:min(80vw, 900px);
+        height:min(100%,500px);
+        background-color:#000;
+
+        border:solid 1px #000;
+        border-radius:20px;
+        overflow: hidden;
+    }
+}
