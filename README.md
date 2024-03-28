@@ -36,6 +36,8 @@ Criei esse repositório para praticar e aperfeiçoar minhas abilidades com o Jav
             <li><a href="./rolldice/">Code</a></li>
             <a href="https://ezzysant.github.io/Projects-JavaScript/rolldice/index.html"><img src="img/dados.gif" width="250px"></a>
         </td>
+    </tr>
+    <tr>
         <td>
             <h3><a href="https://ezzysant.github.io/Projects-JavaScript/calc/index.html">06 - Calculadora</a></h3>
             <li><a href="./calc/">Code</a></li>
