@@ -99,6 +99,7 @@ body{
 
 .theme_e_discover_word > .discover_word{
     font-size: 1.8em;
+    letter-spacing: 8px;
 }
 
 .content_all > .content_keyboard{
@@ -192,10 +193,16 @@ body{
 .aviso > .btn_aviso{
     display: block;
 
+    cursor: pointer;
+
     background-color:#fff;
     border:solid 1px black;
     padding:3px;
     border-radius: 5px;
+}
+
+.aviso > .btn_aviso:hover{
+    background-color:#d3d3d3;
 }
 
 footer{
