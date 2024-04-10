@@ -1,121 +1,67 @@
-const inputNum = document.getElementById('inum');    //Variavel do Input
-const aviso = document.getElementById('iaviso');    //Variavel do aviso
-const res = document.getElementById('ires');        //Variavel para colocar a resposta na div
+const input_num = document.querySelector('#input-number-primo');//Váriavel do Input
+const btn_verf = document.querySelector('.btn-verificar');//Váriavel do Botão de verificação
+const ele_aviso = document.querySelector('#aviso');//Váriavel do aviso
+const ele_res = document.querySelector('#resposta');//Váriavel para colocar a resposta na div
 
+function numClear(num){//Essa função serve para tirar tudo que não é numero e separar o s numeros com virgula ','
+    let numbers = '';//Váriavel que armazenara os números já limpos
 
-//Functon exenciais
-function verfNumber(ele){//Verificar se o argumento é numero
-    for(let n of '1234567890'){
-        if(ele === n){
-            return true
+    for(let i = 0; i < num.length;i++){//Laço de repetição
+        if(/[0-9]/.test(num[i])){//Se for numero
+            numbers+=num[i];//Concatenar á váriavel 'numbers'
+        }else if(numbers && numbers[numbers.length - 1] !== ',' && /[0-9]/.test(num[i + 1])){//Se Não, Se a váriavel 'numCler' tiver aldum carácter E o último carácter de 'numbers' não for virgula ',' E o proximo carácter do paramatro 'num' for um número;
+            numbers+=',';//Concatenar a 'numbers'
         }
     }
-    return false
+
+    return numbers;//Retornar 'numbers'
 }
 
-function avisoErro(input=''){
-    for(let i = 0; i < input.length; i++){
-        if(!verfNumber(input[i]) && input[i] !== ','){
-            let msg = 'Preencha apenas com números naturais'
-            if(aviso.innerHTML !== msg)aviso.innerHTML = msg;
-            break;
-        }
-        if(aviso.innerHTML !== '')aviso.innerHTML = '';
+function isPrimo(num){//Essa função verifica se o parametro é um numero primo ou não
+    for(let dividir = 2; dividir < num; dividir++){
+        if(num%dividir===0)return false;
     }
+    return true
 }
 
+function verifNumPrimo(num){//Essa função aplicara todas as função para verificar apenas numeros e separar os números primos e números não primos;
+    let arrNumbers = [... new Set(numClear(num).split(',').sort((a,b)=> a - b))],//Essa váriavel armasenara o parametro limpo de cáracteres que não são números ou virgula E reorganizara em ordem crecente os numeros com o metodo sort((a,b)=>a-b) E dentro de um objeto Set() removera todos os números repetidos E com o spread operator "..." separara todos os valores do objeto dentro de um Array [ ]
+    objNumbers = {primos:'',noprimos:''};
 
-//Função para verificar se o número  é primo
-function resNumPrimo(){
-    res.innerHTML = '';
-
-
-    if(inputNum.value.length > 0){   //Se o input tiver alguma numero
-        let numValue = '';//Variavel que rescreverar os caracteres passados por 'inputNum'
-        let num = [];//Lista para os numeros
-        let index = 0; //Variavel que armazena o index de num
-
-
-        //Função para verificar se o parametro é um numero primo
-        function numPrimos(n){
-            for(let i = 2; i < n; i++){//Laço de repetição para 'i' receber todos os numeros que são maior que 1 e menor que 'n'
-                if(Number.isInteger(n/i)){return false}//Retorne false se a divisão de 'n' com 'i' for um numero Inteiro
-            }
-            return true;//Retorne true
+    for(let ele of arrNumbers){//Laço de repetição for ..of para verificar cada elemento do Array 'arrNumbers'
+        if(Number(ele) > 1 && isPrimo(Number(ele))){//Se o elemento for maior que 1 e For número primo
+            objNumbers.primos += objNumbers.primos ? ','+ele:ele;//Concatenar na propriedade 'primos' do 'objNumbers', Se tiver vazio concatene 'ele' se não concatene " ',' + ele "
+        }else{//Se não
+            objNumbers.noprimos += objNumbers.noprimos ? ','+ele:ele;//Concatenar na propriedade 'noprimos' do 'objNumbers', Se tiver vazio concatene 'ele' se não concatene " ',' + ele "
         }
+    }
 
-    
+    if(objNumbers.primos){//Se tem caracteres na propriedade 'primos'
+        ele_res.innerHTML += `Números Primos: ${objNumbers.primos} <br>`;//Concatenar a resposta no 'ele_res'
+    }
+    if(objNumbers.noprimos){//Se tem caracteres na propriedade 'noprimos'
+        ele_res.innerHTML += `Números Não Primos: ${objNumbers.noprimos}`;//Concatenar a resposta no 'ele_res'
+    }
 
-        for(let i = 0; i < inputNum.value.length;i++){//Esse laço ira tirar todos os caracteres que não são numeros e nem virgula (,)
-    
-            if(verfNumber(inputNum.value[i])){//Se o caracter for um número
-                numValue+= inputNum.value[i];//Adicionar caracter ao 'numValue'
-    
-            }else if(inputNum.value[i] === ','){//Mas se for uma virgula ','
-    
-                //Se o cumprimento de 'numValue' for maior que 0 E o último caracter adicionado não for uma virgula E o proximo caracter que será adicionado for um numero
-                if(numValue.length > 0 && numValue[numValue.length - 1] !== ',' && (inputNum.value[i+1] !== ',' || inputNum.value[i+1] !== undefined) ){
-                    numValue+= inputNum.value[i];//Adicionar caracter ao 'numValue'
-                }
-            }
-        }
-
-
-        //Leço para adicionar os numeros ao Array 'num'
-        for(let ele of numValue){
-            if(ele ===','){//Se o caracter a adicionar for virgula ','
-                index++;//Pular para o procimo elemento
-
-            }else{//Se não
-                //Se 'num[index]' for indefinido o mesmo recebe o valor de 'ele', Se 'num[index]' tiver um elemento concatene o 'ele' ao elemento
-                num[index] = num[index] === undefined ? num[index]=ele  : num[index] += ele ;  
-            }
-        }                
-
-        //Variaveis que armazenara numeros primos e outra que armazenara numeros não primos
-        let listPrimos, listNoPrimos;
-
-        //Vairiavel que armazena os elementos mais não armazena os repetidos
-        const numNoRepeat = num.filter(function(este, i){
-            return num.indexOf(este) === i;
-        })
-
-
-        //Corrigindo Valor de 'inputNum' para não ter caracteres não suportados, numeros repitidos nem espaços
-        inputNum.value = numNoRepeat.join();
-        //Resetando aviso
-        aviso.innerHTML = '';
-
-
-        //Laço de repetição que adiciona numeros primos e maiores que 1 ao Array 'listPrimos' e adiciona numeros não primos ao Array 'listNoPrimos'
-        for(let ele of numNoRepeat){
-            if(Number(ele) > 1 && numPrimos(Number(ele))){
-                listPrimos = listPrimos === undefined ? listPrimos = ele : listPrimos+=`, ${ele}`;
-            }else if(Number(ele) !== 0){
-                listNoPrimos = listNoPrimos === undefined ? listNoPrimos = ele : listNoPrimos+=`, ${ele}`;
-            }
-        }
-
-        //Se 'listPrimos' for diferente de indefinido, mostre a mensagem de numeros primos a div 'res' 
-        if(listPrimos !== undefined){
-
-            res.innerHTML+= `Número(s) Primo(s): ${listPrimos}<br>`;
-
-        }
-        //Se 'listNoPrimos' for diferente de indefinido, mostre a mensagem de numeros não primos a div 'res' 
-        if(listNoPrimos !== undefined){
-
-            res.innerHTML+= `Número(s) Não Primo(s): ${listNoPrimos}<br>`;
-        }
-
-        //Se 'res' tiver conteudo: display de 'res' igual a 'block'
-        if(res.innerHTML !== ''){res.style.display = 'block';}
-        
-
-    }else{//Caso não tiver alerta
-        let msg = 'Digite algum numero'
-        if(aviso.innerHTML !== msg){aviso.innerHTML = msg}
-        //Display igual a 'none'
-        res.style.display = 'none';
-    }            
+    input_num.value = arrNumbers.join(',');//Aqui ele colocara no input_ele.value os numeros reorganizados;
 }
+
+//Evento de Click no botão .btn-verificar
+btn_verf.addEventListener('click', ()=>{
+    let num = input_num.value;//Váriavel que armazenara
+    ele_res.innerHTML = '';//Reiniciando a resposta
+    ele_aviso.innerHTML = '';//Reiniciando aviso
+    if(num){
+        verifNumPrimo(num)
+    }
+})
+
+input_num.addEventListener('input',()=>{
+    for(let letter of input_num.value){
+        if(!/[0-9,]/.test(letter)){
+            ele_aviso.innerHTML='Caracteres Invalidos';
+            return;
+        }
+    }
+    if(ele_aviso.innerHTML)ele_aviso.innerHTML = '';
+})
