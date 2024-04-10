@@ -52,8 +52,9 @@ btn_verf.addEventListener('click', ()=>{
     ele_res.innerHTML = '';//Reiniciando a resposta
     ele_aviso.innerHTML = '';//Reiniciando aviso
     if(num){
-        verifNumPrimo(num)
+        verifNumPrimo(num);
     }
+    ele_res.style.visibility = ele_res.innerHTML ? 'visible':'hidden';//Se tever algo escrito no ele_res ele ficara visivel se não ficar escondido
 })
 
 input_num.addEventListener('input',()=>{
