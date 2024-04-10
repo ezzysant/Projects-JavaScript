@@ -67,13 +67,13 @@ label{
     padding:2px;
 }
 
-#iaviso{
+#aviso{
     color:red;
     font-size: .9em;
 }
 
-#ires{
-    display:none;
+#resposta{
+    visibility: hidden;
     width:100%;
     background:#353535;
     color:#fff;
