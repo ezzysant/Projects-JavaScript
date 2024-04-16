@@ -35,7 +35,7 @@ function verifNumPrimo(num){//Essa função aplicara todas as função para veri
 
 //Evento de Click no botão .btn-verificar
 btn_verf.addEventListener('click', ()=>{
-    let num = input_num.value.match(/[0-9]+/g);//Váriavel que armazenara uma Array, o metodo ".match()" que entre os seus parenteses "()" tem um "RegEx" faz com que apenas números do "value" de "input_num" sejão itens nessa Array que iara ser retornada.
+    let num = input_num.value.match(/\d+/g);//Váriavel que armazenara uma Array, o metodo ".match()" que entre os seus parenteses "()" tem um "RegEx" faz com que apenas números do "value" de "input_num" sejão itens nessa Array que iara ser retornada.
     ele_res.innerHTML = '';//Reiniciando a resposta
     ele_aviso.innerHTML = '';//Reiniciando aviso
     if(num!== null){//Se "num" for diferente de null
