@@ -46,11 +46,9 @@ btn_verf.addEventListener('click', ()=>{
 
 //Evento Input no "input_num"
 input_num.addEventListener('input',()=>{
-    for(let letter of input_num.value){//Laço de repetição para todos os caracteres dentro do "value" de "input_num"
-        if(!/[0-9,]/.test(letter)){//Se um dos caracteres não for numero
-            ele_aviso.innerHTML='Caracteres Invalidos';//Mensagem de caracter invalido
-            return;//retornar
-        }
+    if(/[^\d|,]/.test(input_num.value)){//Se o "value" de "input_num" conter algum caracter que seja diverete de numeros "0-9" ou virgula ","
+        ele_aviso.innerHTML='Caracteres Invalidos';//Mensagem de caracter invalido
+        return;//retornar
     }
     //Se o laço terminar
 
